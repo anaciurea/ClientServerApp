@@ -1,13 +1,13 @@
 Ciurea Ana-Sorina 321 CC 
- Tema 2 Aplicatie client-server TCP si UDP pentru gesionarea mesajelor
+ # Tema 2 Aplicatie client-server TCP si UDP pentru gesionarea mesajelor
 
-Proiectul contine urmatoarele fisiere :
+## Proiectul contine urmatoarele fisiere :
 - protocol.h 
 - server.c 
 - subscriber.c 
 - Makefile (pentru compilarea proiectului: exista si regula de make si de clean)
 
-protocol.h
+## protocol.h
     – struct udp_message_t:
         · topic[50]      – nume al topic-ului
         · data_type      – cod de interpretare (0=INT, 1=SHORT_REAL, 2=FLOAT, 3=STRING)
@@ -18,7 +18,7 @@ protocol.h
         · type           – tip mesaj TCP
         · payload[]      – topic + continut
 
-server.c
+## server.c
 - Parseaza portul din linia de comanda si verifica validitatea acestuia
 - Creeaza un socket UDP si bind() pe portul specificat
 - Creeaza un socket TCP, bind() pe acelasi port, apoi listen()
@@ -62,7 +62,7 @@ server.c
     void send_msg_to_client(client_t *client, udp_message_t *udp_message, struct sockaddr_in *src_addr) :
     Construieşte si trimite un mesaj UDP catre un client.
 
-  subscriber.c
+ ##  subscriber.c
 - Parseaza argumentele din linia de comanda: CLIENT_ID, SERVER_IP, SERVER_PORT  
 - Creeaza un socket TCP (socket())  
 - Se conecteaza la server folosind connect()  
@@ -87,4 +87,5 @@ Pentru o intelegere mai buna a conceptelor am folosit urmatoarele surse:
 - socket https://www.geeksforgeeks.org/socket-programming-cc/ si https://pubs.opengroup.org/onlinepubs/9699919799/functions/socket.html
 - functia bind https://pubs.opengroup.org/onlinepubs/9699919799/functions/bind.html
 - https://www.geeksforgeeks.org/udp-server-client-implementation-c/
+
 - laboratoarele 6, 7, 8 https://pcom.pages.upb.ro/labs/lab6/lecture.html
